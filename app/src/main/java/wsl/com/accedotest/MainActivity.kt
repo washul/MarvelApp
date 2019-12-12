@@ -2,6 +2,7 @@ package wsl.com.accedotest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,16 +50,22 @@ class MainActivity : AppCompatActivity() {
 
             charactersViewModel.getMoreCharacters {
 
-                if ( it != null ) {
+                if ( it != null && it.isNotEmpty() ) {
 
                     this@MainActivity.runOnUiThread {
 
                         adapter.updateList( it )
-                        _swipeToRefresh.isRefreshing = false
+
 
                     }
 
+                }else{
+
+                    Toast.makeText( applicationContext, "No se a podido actualizar la lista.", Toast.LENGTH_LONG ).show()
+
                 }
+
+                _swipeToRefresh.isRefreshing = false
 
             }
 
