@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name="image_size" tools:ignore="ExtraTranslation">landscape_xlarge</string>
+    <string name="image_size_details" tools:ignore="ExtraTranslation">landscape_incredible</string>
+
+</resources>
